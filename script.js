@@ -17,15 +17,15 @@ function playGame(userChoice) {
     }
     document.getElementsById("result").innerText= `You chose ${userChoice}, computer chose ${computerChoice}. ${result}`;
     document.getElementById("player-score").innerText=KkScore;
-    document.getElementById("computer-score").innerText=SkScore;
+    document.getElementById("Sk-score").innerText=SkScore;
     checkwinner();
 }
 function checkWinner() {
-    if (playerScore >= winningScore) {
+    if (KkScore >= winningScore) {
         document.getElementById("game-status").innerText = "Game Over! You are the Winner!";
         disableButtons();
-    } else if (computerScore >= winningScore) {
-        document.getElementById("game-status").innerText = "Game Over! Computer Wins!";
+    } else if (SkScore >= winningScore) {
+        document.getElementById("game-status").innerText = "Game Over! Sk Wins!";
         disableButtons();
     }
 }
