@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+.choices button {
+    font-size: 20px;
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+.result {
+    font-size: 24px;
+    margin-top: 20px;
+}
+.scorecard{
+    font-size: 20px;
+    margin-top: 20px;
+}
