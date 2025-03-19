@@ -8,16 +8,18 @@
 </head>
 <body>
     <h1>Rock Paper Scissor</h1>
+    <p>Moves left: <span id = "moves-left">5</span></p>
     <div class="choices">
         <button onclick="playGame('rock')">Rock</button>
-        <button onclick="playGame('Paper')">Paper</button>
-        <button onclick="playGame('Scissor')">Scissor</button>
+        <button onclick="playGame('paper')">Paper</button>
+        <button onclick="playGame('scissor')">Scissor</button>
     </div>
     <p id="result"></p>
     <div class="scorecard">
-        <p>Kk Score: <span id="Player-score">0</span></p>
-        <p>Sk Score: <span id="Player-score">0</span></p>
+        <p>Kk Score: <span id="kk-score">0</span></p>
+        <p>Sk Score: <span id="sk-score">0</span></p>
     </div>
+    <p id="game-status"></p>
     <script src="script.js"></script>
 </body>
 </html>

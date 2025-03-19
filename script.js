@@ -1,35 +1,44 @@
-function playGame(userChoice) {
-    const choices = ['rock','paper','scissors']
-    const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+let kkScore = 0;
+let skScore = 0;
+let movesLeft = 5;
+function playGame(kkChoice) {
+    if (movesLeft === 0) return;
+    const choices = ['rock', 'paper', 'scissors'];
+    const skChoice = choices[Math.floor(Math.random() * choices.length)];
     let result = '';
-    if(userChoice=== computerChoice){
-        result= "It is a tie match";
+    if (kkChoice === skChoice) {
+        result = "It's a tie!";
     } else if (
-        (userChoice === 'rock' && computerChoice==='scissors') ||
-        (userChoice=== 'paper' && computerChoice==='rock') ||
-        (userChoice === 'scissors' && computerChoice === 'paper')
+        (kkChoice === 'rock' && skChoice === 'scissors') ||
+        (kkChoice === 'paper' && skChoice === 'rock') ||
+        (kkChoice === 'scissors' && skChoice === 'paper')
     ) {
-        result= "we won the match";
-        playerScore++;
-    } else{
-        result = "You lose the match";
-        computerScore++;
-    }
-    document.getElementsById("result").innerText= `You chose ${userChoice}, computer chose ${computerChoice}. ${result}`;
-    document.getElementById("player-score").innerText=KkScore;
-    document.getElementById("Sk-score").innerText=SkScore;
-    checkwinner();
+        result = "KK won the match!";
+        kkScore++;
+    } else {
+        result = "SK won the match!";
+        skScore++;
+    }  
+    movesLeft--;
+    document.getElementById("result").innerText = 
+        `KK chose ${kkChoice}, SK chose ${skChoice}. ${result}`;
+    document.getElementById("kk-score").innerText = kkScore;
+    document.getElementById("sk-score").innerText = skScore;
+    document.getElementById("moves-left").innerText = movesLeft;
+    checkWinner();
 }
 function checkWinner() {
-    if (KkScore >= winningScore) {
-        document.getElementById("game-status").innerText = "Game Over! You are the Winner!";
-        disableButtons();
-    } else if (SkScore >= winningScore) {
-        document.getElementById("game-status").innerText = "Game Over! Sk Wins!";
+    if (movesLeft === 0) {
+        if (kkScore > skScore) {
+            document.getElementById("game-status").innerText = "Game Over! KK Wins!";
+        } else if (kkScore < skScore) {
+            document.getElementById("game-status").innerText = "Game Over! SK Wins!";
+        } else {
+            document.getElementById("game-status").innerText = "Game Over! It's a Draw!";
+        }
         disableButtons();
     }
 }
-
 function disableButtons() {
     document.querySelectorAll(".choices button").forEach(button => button.disabled = true);
 }
