@@ -18,13 +18,14 @@ function playGame(kkChoice) {
     } else {
         result = "SK won the match!";
         skScore++;
-    }  
+    }
     movesLeft--;
-    document.getElementById("result").innerText = 
-        `KK chose ${kkChoice}, SK chose ${skChoice}. ${result}`;
+    document.getElementById("result").innerText = `KK chose ${kkChoice}, SK chose ${skChoice}. ${result}`;
     document.getElementById("kk-score").innerText = kkScore;
     document.getElementById("sk-score").innerText = skScore;
     document.getElementById("moves-left").innerText = movesLeft;
+    document.getElementById("result").classList.add("fade-in");
+    setTimeout(()=>document.getElementById("result").classList.remove("fade-in"), 1000);
     checkWinner();
 }
 function checkWinner() {

@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissor</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
     <h1>Rock Paper Scissor</h1>
     <p>Moves left: <span id = "moves-left">5</span></p>
     <div class="choices">
-        <button onclick="playGame('rock')">Rock</button>
-        <button onclick="playGame('paper')">Paper</button>
-        <button onclick="playGame('scissor')">Scissor</button>
+        <button onclick="playGame('rock')"><i class="fa-solid fa-hand-rock"></i></button>
+        <button onclick="playGame('paper')"><i class="fa-solid fa-hand-paper"></i></button>
+        <button onclick="playGame('scissors')"><i class="fa-solid fa-hand-scissors"></i></button>
     </div>
     <p id="result"></p>
     <div class="scorecard">
