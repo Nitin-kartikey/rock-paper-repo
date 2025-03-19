@@ -1,19 +1,61 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin-left: 50px;
+    margin: 0;
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+h1{
+    font-size: 25px;
+    color: gray
 }
 .choices button {
-    font-size: 20px;
+    font-size: 15px;
     margin: 10px;
+    border: 2px solid skyblue;
     padding: 10px 20px;
+    cursor: pointer;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+.choices button i {
+    font-size: 30px;
+}
+.choices button:hover{
+    transform: scale(0.8);
+    cursor: pointer;
+}
+.choices button:active {
+    transform: scale(0.9);
     cursor: pointer;
 }
 .result {
-    font-size: 24px;
-    margin-top: 20px;
-}
-.scorecard{
     font-size: 20px;
     margin-top: 20px;
+    opacity: 0;
+}
+.result.fade-in {
+    animation: fadeInText 0.5s ease-in-out forwards;
+}
+.scorecard {
+    font-size: 16px;
+    position: relative;
+    top: -10px;
+    padding: 10px 15px;
 }
